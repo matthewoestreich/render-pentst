@@ -8,12 +8,10 @@
 <body>
   <script>
     const ws = new WebSocket("wss://rtchat-a7ul.onrender.com/");
-    ws.onopen(event => {
-      console.log("opened!", {event});
-    });
-    ws.onmessage(event => {
-      console.log("onmessage", {event});
-    });
+    ws.addEventListener("error", (errorEvent) => console.error("ERROR", {errorEvent}));
+    ws.addEventListener("open", (openEvent) => console.log("OPEN", {openEvent}));
+    ws.addEventListener("close", (closeEvent) => console.log("CLOSE", {closeEvent}));
+    ws.addEventListener("message", (messageEvent) => console.log("MESSAGE", {messageEvent}));
   </script>
 </body>
 </html>
