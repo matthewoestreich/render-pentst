@@ -14,12 +14,8 @@
         root.innerHTML = "Not ok.";
 			  return;
 			}
-			const body = await result.json();
-			root.innerHTML = `
-        <pre>
-          ${JSON.stringify(JSON.parse(body), null, 2)}
-        </pre>
-      `;
+			const body = await result.text();
+			root.innerHTML = body;
 		</script>
 	</body>
 </html>
