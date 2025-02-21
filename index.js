@@ -9,12 +9,7 @@ app.get("/rtchat/websocket-csrf", (req, res) => {
 });
 
 app.get("/rtchat/csrf", async (req, res) => {
-  const result = await fetch(RTCHAT_URL);
-  if (!result.ok) {
-    return res.send(result);
-  }
-  const body = await result.json();
-  res.send(body);
+  res.sendFile(nodePath.resolve(__dirname, "./rtchat.csrf.html"));
 });
 
 app.get("*", (req, res) => {
