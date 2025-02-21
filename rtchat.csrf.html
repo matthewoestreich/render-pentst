@@ -6,16 +6,18 @@
 		<title>CSRF</title>
 	</head>
 	<body>
-    <div id="root"></div>
+		<div id="root"></div>
 		<script>
-      const root = document.getElementById("root");
-			const result = await fetch("https://rtchat-a7ul.onrender.com/");
-			if (!result.ok) {
-        root.innerHTML = "Not ok.";
-			  return;
-			}
-			const body = await result.text();
-			root.innerHTML = body;
+			(async () => {
+				const root = document.getElementById("root");
+				const result = await fetch("https://rtchat-a7ul.onrender.com/");
+				if (!result.ok) {
+					root.innerHTML = "Not ok.";
+					return;
+				}
+				const body = await result.text();
+				root.innerHTML = body;
+			})();
 		</script>
 	</body>
 </html>
