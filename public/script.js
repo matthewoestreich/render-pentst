@@ -1,1 +1,1 @@
-alert("Wizer");
+alert("Wizer")();
