@@ -12,6 +12,12 @@ app.get("/rtchat/csrf", async (req, res) => {
   res.sendFile(nodePath.resolve(__dirname, "./rtchat.csrf.html"));
 });
 
+app.get("/script.js", (req, res) => {
+  // For Wizer CTF Challenge #48
+  res.setHeader("Content-Type", "application/javascript");
+  res.send("alert('Wizer');");
+});
+
 app.get("*", (req, res) => {
   res.status(404).send("not found");
 });
