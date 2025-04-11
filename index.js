@@ -25,7 +25,7 @@ app.get("/challenge48", (req, res) => {
   <title>Document</title>
 </head>
 <body>
-  <script src="/script.js" />
+  <script src="/script.js"></script>
 </body>
 </html>    
 `);
