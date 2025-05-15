@@ -23,6 +23,12 @@ app.get("*", (req, res) => {
   res.status(404).send("not found");
 });
 
+// For Wizer Challenge 50
+app.get("/challenge-50/api/internal", (req, res) => {
+  console.log(req.headers);
+  res.status(200).send();
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log('server listening on port', port);
