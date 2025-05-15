@@ -22,17 +22,8 @@ app.get("/rtchat/csrf", async (req, res) => {
 // For Wizer Challenge 50
 app.get("/challenge-50/api/internal/", (req, res) => {
   console.log(req.headers);
-  res.status(200).send();
+  res.json({headers: req.headers});
 });
-app.get("/challenge-50/api/internal", (req, res) => {
-  console.log(req.headers);
-  res.status(200).send();
-});
-
-
-
-
-
 
 app.get("*", (req, res) => {
   res.status(404).send("not found");
