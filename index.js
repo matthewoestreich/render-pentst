@@ -19,14 +19,23 @@ app.get("/rtchat/csrf", async (req, res) => {
   res.sendFile(nodePath.resolve(__dirname, "./rtchat.csrf.html"));
 });
 
-app.get("*", (req, res) => {
-  res.status(404).send("not found");
-});
-
 // For Wizer Challenge 50
+app.get("/challenge-50/api/internal/", (req, res) => {
+  console.log(req.headers);
+  res.status(200).send();
+});
 app.get("/challenge-50/api/internal", (req, res) => {
   console.log(req.headers);
   res.status(200).send();
+});
+
+
+
+
+
+
+app.get("*", (req, res) => {
+  res.status(404).send("not found");
 });
 
 const port = process.env.PORT || 3000;
